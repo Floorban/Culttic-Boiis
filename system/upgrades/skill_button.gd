@@ -11,6 +11,8 @@ var level := 0:
 		skill_level.text = str(level) + "/" + str(skill.max_level)
 
 func _ready() -> void:
+	if get_parent() is SkillNode:
+		hide()
 	_init_line()
 	pressed.connect(_on_pressed)
 	
@@ -36,3 +38,4 @@ func _unlock_next_skills() -> void:
 	for s in skills:
 		if s is SkillNode and level == skill.max_level:
 			s.disabled = false
+			s.show()

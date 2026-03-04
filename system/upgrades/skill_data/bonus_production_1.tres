@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://be31pom3212iw"]
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://be31pom3212iw"]
 
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/skill_effect/skill_effect.gd" id="1_4u7r7"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/skill_data/skill_data.gd" id="2_8s2h8"]
