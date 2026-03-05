@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drl85mh4n5uff"]
 
 [ext_resource type="Script" uid="uid://c5j2exokufugr" path="res://system/upgrades/game_ui.gd" id="1_oaw30"]
-[ext_resource type="Texture2D" uid="uid://bdfjcksnww7hw" path="res://asset/circle.png" id="1_ue6oa"]
+[ext_resource type="Texture2D" uid="uid://bdfjcksnww7hw" path="res://asset/ui/circle.png" id="1_ue6oa"]
 
 [node name="GameUI" type="Control" unique_id=24144602]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1ktvbleh6eme"]
 
-[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/icon.svg" id="1_r8dvm"]
+[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="1_r8dvm"]
 [ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/dashboard_panel.tscn" id="2_jmo0d"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_panel.tscn" id="2_l8vv1"]
@@ -71,27 +71,22 @@ theme_override_constants/separation = 13
 
 [node name="TabButton1" parent="MarginContainer/Background/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
 layout_mode = 2
-text = "Dashboard"
 btn_display_name = "Dashboard"
 
 [node name="TabButton2" parent="MarginContainer/Background/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
 layout_mode = 2
-text = "Upgrades"
 btn_display_name = "Upgrades"
 
 [node name="TabButton3" parent="MarginContainer/Background/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
 layout_mode = 2
-text = "Radar"
 btn_display_name = "Radar"
 
 [node name="TabButton4" parent="MarginContainer/Background/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
 layout_mode = 2
-text = "Overview"
 btn_display_name = "Overview"
 
 [node name="TabButton5" parent="MarginContainer/Background/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
 layout_mode = 2
-text = "Settings"
 btn_display_name = "Settings"
 
 [node name="StatsPanel" type="Panel" parent="MarginContainer/Background" unique_id=421974663]

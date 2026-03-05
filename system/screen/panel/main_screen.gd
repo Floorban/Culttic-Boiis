@@ -5,7 +5,7 @@ class_name MainScreen extends Control
 @onready var stats_panel: Control = %StatsPanel
 
 var sub_panels : Array[SubPanel]
-var tab_btns: Array[Button]
+var tab_btns: Array[TabBtn]
 
 
 func _ready() -> void:

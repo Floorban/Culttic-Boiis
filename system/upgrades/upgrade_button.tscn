@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://beeci88ete627"]
 
-[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/icon.svg" id="1_gbnho"]
+[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="1_gbnho"]
 [ext_resource type="Script" uid="uid://dcvyj2pcnodv8" path="res://system/upgrades/upgrade_button.gd" id="2_itpuo"]
 
 [node name="UpgradeButton" type="TextureButton" unique_id=1774295761]
 self_modulate = Color(0.36078432, 0.36078432, 0.36078432, 1)
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(100, 100)
 disabled = true
 texture_normal = ExtResource("1_gbnho")
 ignore_texture_size = true
@@ -13,17 +13,12 @@ stretch_mode = 4
 script = ExtResource("2_itpuo")
 
 [node name="UpgradeLevel" type="Label" parent="." unique_id=1695626401]
-custom_minimum_size = Vector2(500, 500)
+custom_minimum_size = Vector2(900, 900)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 445.0
-offset_bottom = 450.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 900.0
+offset_bottom = 900.0
 scale = Vector2(0.1, 0.1)
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 256
 text = "0/3"
 horizontal_alignment = 2
 vertical_alignment = 2
@@ -31,5 +26,5 @@ vertical_alignment = 2
 [node name="UpgradeBranch" type="Line2D" parent="." unique_id=1764824541]
 top_level = true
 z_index = -1
-width = 5.0
+width = 7.0
 default_color = Color(0.36157545, 0.36157548, 0.36157548, 1)
