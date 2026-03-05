@@ -36,6 +36,3 @@ func is_unlocked(skill: SkillData) -> bool:
 
 func can_unlock(skill: SkillData) -> bool:
 	return get_level(skill) < skill.max_level
-
-func _on_button_pressed() -> void:
-	GameManager.next_level()

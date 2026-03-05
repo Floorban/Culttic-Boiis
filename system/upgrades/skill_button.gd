@@ -20,8 +20,19 @@ func _init_line() -> void:
 	var p := get_parent()
 	if p is not SkillNode:
 		return
-	skill_branch.add_point(global_position + size / 2)
-	skill_branch.add_point(p.global_position + p.size / 2)
+		
+	skill_branch.clear_points()
+	await get_tree().process_frame
+	
+	var my_center = global_position + size / 2
+	skill_branch.add_point(skill_branch.to_local(my_center))
+	
+	var parent_global_center = p.global_position + (p.size / 2)
+	var parent_local_pos = skill_branch.to_local(parent_global_center)
+	skill_branch.add_point(parent_local_pos)
+	
+	#skill_branch.add_point(global_position + size / 2)
+	#skill_branch.add_point(p.global_position + p.size / 2)
 
 func _on_pressed() -> void:
 	if level == skill.max_level or not GameManager.can_consume_points(skill.needed_points):
@@ -30,7 +41,7 @@ func _on_pressed() -> void:
 	skill_branch.default_color = Color.GREEN
 	level = min(level + 1, skill.max_level)
 	GameManager.consume_points(skill.needed_points)
-	GameManager.skill_tree.unlock(skill)
+	GameManager.upgrades.unlock(skill)
 	_unlock_next_skills()
 
 func _unlock_next_skills() -> void:

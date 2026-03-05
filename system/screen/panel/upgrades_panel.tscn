@@ -78,13 +78,3 @@ offset_left = 209.0
 offset_right = 259.0
 offset_bottom = 50.0
 skill = ExtResource("3_6wgvp")
-
-[node name="Button" type="Button" parent="." unique_id=2091012020]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 48
-text = "CLOSE"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

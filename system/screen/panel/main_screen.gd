@@ -1,8 +1,8 @@
 class_name MainScreen extends Control
 
 @onready var panel_container: Control = %PanelContainer
-@onready var taskbar: HBoxContainer = %Taskbar
-@onready var stats_panel: Panel = %StatsPanel
+@onready var taskbar: Control = %Taskbar
+@onready var stats_panel: Control = %StatsPanel
 
 var sub_panels : Array[SubPanel]
 var tab_btns: Array[Button]
