@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b4b8pivkpdt40"]
+
+[ext_resource type="Script" uid="uid://chejf2p2e1j1p" path="res://system/screen/panel/radar_panel.gd" id="1_sjq33"]
+
+[node name="RadarPanel" type="Control" unique_id=952982154]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1300.0
+offset_bottom = 820.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_sjq33")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1390644060]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
+
+[node name="Label" type="Label" parent="." unique_id=810207107]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 36
+text = "Radar"

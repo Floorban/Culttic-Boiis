@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 var needs_snap: bool = false
 var last_ground_pos: Vector3
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not selecting_building or not enabled:
 		return
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d4n3ilc1fuuvr" path="res://system/old/building/building_manager.tscn" id="1_we1pj"]
 [ext_resource type="PackedScene" uid="uid://bovw76p1yq6qq" path="res://system/old/camera/camera_controller.tscn" id="2_ts43b"]
-[ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/upgrades/skill_tree.tscn" id="3_nw5jd"]
+[ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_panel.tscn" id="3_nw5jd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wp4xf"]
 

@@ -7,3 +7,4 @@
 script = ExtResource("1_70yv6")
 
 [node name="GameUI" parent="." unique_id=869195432 instance=ExtResource("2_c17mm")]
+visible = false

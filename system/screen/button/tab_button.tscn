@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://drk220wxciily"]
+
+[ext_resource type="Script" uid="uid://bi7sd0slj7a5n" path="res://system/screen/button/tab_button.gd" id="1_igqt3"]
+
+[node name="TabButton" type="Button" unique_id=817727907]
+custom_minimum_size = Vector2(250, 60)
+theme_override_font_sizes/font_size = 36
+script = ExtResource("1_igqt3")

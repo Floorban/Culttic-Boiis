@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://1ktvbleh6eme"]
 
+[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/icon.svg" id="1_r8dvm"]
+[ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
+[ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/dashboard_panel.tscn" id="2_jmo0d"]
+[ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_panel.tscn" id="2_l8vv1"]
+[ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="3_n877d"]
+[ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/radar_panel.tscn" id="4_bor6b"]
+
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_ckf3p")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1135349797]
 layout_mode = 1
@@ -15,26 +23,226 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 80
 
 [node name="Background" type="TextureRect" parent="MarginContainer" unique_id=1423564982]
 texture_filter = 1
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer" unique_id=2071985704]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "dsadsadasdasdasdasdas"
-horizontal_alignment = 1
+[node name="PanelContainer" type="Control" parent="MarginContainer/Background" unique_id=438135928]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
 
-[node name="Button" type="Button" parent="MarginContainer" unique_id=1477781006]
-custom_minimum_size = Vector2(500, 500)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="DashboardPanel" parent="MarginContainer/Background/PanelContainer" unique_id=952982154 instance=ExtResource("2_jmo0d")]
+layout_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1493027421]
+[node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
+layout_mode = 0
+
+[node name="RadarPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
+layout_mode = 0
+
+[node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background" unique_id=233926735]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 860.0
+offset_right = 1314.0
+offset_bottom = 920.0
+theme_override_constants/separation = 13
+
+[node name="TabButton1" parent="MarginContainer/Background/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
+layout_mode = 2
+text = "Dashboard"
+btn_display_name = "Dashboard"
+
+[node name="TabButton2" parent="MarginContainer/Background/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
+layout_mode = 2
+text = "Upgrades"
+btn_display_name = "Upgrades"
+
+[node name="TabButton3" parent="MarginContainer/Background/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
+layout_mode = 2
+text = "Radar"
+btn_display_name = "Radar"
+
+[node name="TabButton4" parent="MarginContainer/Background/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
+layout_mode = 2
+text = "Overview"
+btn_display_name = "Overview"
+
+[node name="TabButton5" parent="MarginContainer/Background/Taskbar" unique_id=928939858 instance=ExtResource("3_n877d")]
+layout_mode = 2
+text = "Research"
+btn_display_name = "Research"
+
+[node name="StatsPanel" type="Panel" parent="MarginContainer/Background" unique_id=421974663]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -460.0
+offset_bottom = 460.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background/StatsPanel" unique_id=974169568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer" unique_id=538746788]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Button" type="Button" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1163938518]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Statsbar" type="VBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1493027421]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1102063089]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=489819472]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=209828314]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=782235360]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=548821441]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=930094975]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1220784967]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=894277805]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=1070054953]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=774260960]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=2020614668]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=101146232]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1778845206]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=104151719]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=149884226]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=530648460]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer6" unique_id=1005498462]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer6" unique_id=800239942]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1547180354]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer7" unique_id=1427665231]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r8dvm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer7" unique_id=573217769]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "12345498032633"
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1901541875]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2

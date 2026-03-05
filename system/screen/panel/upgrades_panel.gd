@@ -1,5 +1,5 @@
-extends Control
-class_name SkillTree
+extends SubPanel
+class_name Upgrades
 
 signal skill_changed(skill: SkillData, level: int)
 
@@ -9,7 +9,7 @@ var skills: Array[SkillData]
 var skill_levels: Dictionary[SkillData, int] = {}
 
 func _ready() -> void:
-	GameManager.skill_tree = self
+	GameManager.upgrades = self
 	for skill_node in skill_nodes:
 		skills.append(skill_node.skill)
 	for skill in skills:

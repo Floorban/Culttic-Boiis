@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://kseiabufssdw"]
 
 [ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/skill_button.tscn" id="1_217a5"]
-[ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/upgrades/skill_tree.gd" id="1_fmctd"]
+[ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/screen/panel/upgrades_panel.gd" id="1_fmctd"]
 [ext_resource type="Resource" uid="uid://be31pom3212iw" path="res://system/upgrades/skill_data/bonus_production_1.tres" id="3_6wgvp"]
 
-[node name="SkillTree" type="Control" unique_id=952982154 node_paths=PackedStringArray("skill_nodes")]
+[node name="UpgradesPanel" type="Control" unique_id=952982154 node_paths=PackedStringArray("skill_nodes")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1300.0
+offset_bottom = 820.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 1
 script = ExtResource("1_fmctd")
 skill_nodes = [NodePath("SkillButton")]
