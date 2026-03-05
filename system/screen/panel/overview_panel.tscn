@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://cl11d77lbfnnt"]
+[gd_scene format=3 uid="uid://chr6sq2bcitbf"]
 
-[ext_resource type="Script" uid="uid://bb356ol5u0cn" path="res://system/screen/panel/dashboard_panel.gd" id="1_thcye"]
+[ext_resource type="Script" uid="uid://mkp5vc26q1gv" path="res://system/screen/panel/overview_panel.gd" id="1_0irte"]
 
-[node name="DashboardPanel" type="Control" unique_id=952982154]
+[node name="OverviewPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(1300, 820)
 layout_mode = 3
 anchors_preset = 0
@@ -11,7 +11,7 @@ offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
-script = ExtResource("1_thcye")
+script = ExtResource("1_0irte")
 
 [node name="BG" type="ColorRect" parent="." unique_id=1390644060]
 layout_mode = 1
@@ -27,4 +27,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 36
-text = "Dashboard"
+text = "Overview"

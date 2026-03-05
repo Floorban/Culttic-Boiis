@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://chejf2p2e1j1p" path="res://system/screen/panel/radar_panel.gd" id="1_sjq33"]
 
 [node name="RadarPanel" type="Control" unique_id=952982154]
+custom_minimum_size = Vector2(1300, 820)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1300.0

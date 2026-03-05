@@ -89,11 +89,6 @@ layout_mode = 2
 text = "Overview"
 btn_display_name = "Overview"
 
-[node name="TabButton5" parent="MarginContainer/Background/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
-layout_mode = 2
-text = "Settings"
-btn_display_name = "Settings"
-
 [node name="StatsPanel" type="Panel" parent="MarginContainer/Background" unique_id=421974663]
 unique_name_in_owner = true
 layout_mode = 1

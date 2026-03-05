@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://kseiabufssdw"]
 
-[ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/skill_button.tscn" id="1_217a5"]
+[ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_217a5"]
 [ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/screen/panel/upgrades_panel.gd" id="1_fmctd"]
-[ext_resource type="Resource" uid="uid://be31pom3212iw" path="res://system/upgrades/skill_data/bonus_production_1.tres" id="3_6wgvp"]
+[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://system/upgrades/upgrade_data/upgrade_data_1.tres" id="3_xuksn"]
 
-[node name="UpgradesPanel" type="Control" unique_id=952982154 node_paths=PackedStringArray("skill_nodes")]
+[node name="UpgradesPanel" type="Control" unique_id=952982154 node_paths=PackedStringArray("upgrade_btns")]
+custom_minimum_size = Vector2(1300, 820)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1300.0
@@ -13,7 +14,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 script = ExtResource("1_fmctd")
-skill_nodes = [NodePath("SkillButton")]
+upgrade_btns = [NodePath("SkillButton"), NodePath("SkillButton/SkillButton2"), NodePath("SkillButton/SkillButton2/SkillButton4"), NodePath("SkillButton/SkillButton2/SkillButton5"), NodePath("SkillButton/SkillButton3"), NodePath("SkillButton/SkillButton3/SkillButton6"), NodePath("SkillButton/SkillButton3/SkillButton7")]
 
 [node name="BG" type="ColorRect" parent="." unique_id=1390644060]
 layout_mode = 1
@@ -31,14 +32,14 @@ offset_top = 672.0
 offset_right = 671.0
 offset_bottom = 692.0
 disabled = false
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")
 
 [node name="SkillButton2" parent="SkillButton" unique_id=779054283 instance=ExtResource("1_217a5")]
 layout_mode = 0
 offset_left = -246.0
 offset_right = -196.0
 offset_bottom = 50.0
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")
 
 [node name="SkillButton4" parent="SkillButton/SkillButton2" unique_id=475773940 instance=ExtResource("1_217a5")]
 layout_mode = 0
@@ -46,7 +47,7 @@ offset_left = -263.0
 offset_top = -2.0
 offset_right = -213.0
 offset_bottom = 48.0
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")
 
 [node name="SkillButton5" parent="SkillButton/SkillButton2" unique_id=551151924 instance=ExtResource("1_217a5")]
 layout_mode = 0
@@ -54,7 +55,7 @@ offset_left = -3.0
 offset_top = -166.0
 offset_right = 47.0
 offset_bottom = -116.0
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")
 
 [node name="SkillButton3" parent="SkillButton" unique_id=685709900 instance=ExtResource("1_217a5")]
 layout_mode = 0
@@ -62,7 +63,7 @@ offset_left = 220.0
 offset_top = -2.0
 offset_right = 270.0
 offset_bottom = 48.0
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")
 
 [node name="SkillButton6" parent="SkillButton/SkillButton3" unique_id=1365176302 instance=ExtResource("1_217a5")]
 layout_mode = 0
@@ -70,11 +71,11 @@ offset_left = -1.0
 offset_top = -170.0
 offset_right = 49.0
 offset_bottom = -120.0
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")
 
 [node name="SkillButton7" parent="SkillButton/SkillButton3" unique_id=292857974 instance=ExtResource("1_217a5")]
 layout_mode = 0
 offset_left = 209.0
 offset_right = 259.0
 offset_bottom = 50.0
-skill = ExtResource("3_6wgvp")
+upgrade = ExtResource("3_xuksn")

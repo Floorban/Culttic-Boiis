@@ -22,9 +22,7 @@ config/icon="res://asset/icon.svg"
 [autoload]
 
 GameManager="*res://system/autoload/game_manager.tscn"
-PlayerInput="*res://system/old/input/player_input.gd"
 Signals="*res://system/autoload/signals.gd"
-Planet="*res://system/old/planet/planet.tscn"
 PopupPrompt="*res://system/autoload/popup_prompt.gd"
 
 [display]

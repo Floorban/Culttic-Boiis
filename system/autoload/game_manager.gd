@@ -3,8 +3,7 @@ extends Node
 var is_paused := false
 
 @onready var game_ui: GameUI = $GameUI
-var upgrades : Upgrades
-var building_manager: BuildingManager
+var upgrades : UpgradesPanel
 
 var current_score: int
 var current_max_score: int = 50000
@@ -17,8 +16,7 @@ func score(added_score: int) -> void:
 	game_ui.update_score_ui(float(current_score), float(current_max_score))
 	if current_score >= current_max_score:
 		check_game_state(true)
-		building_manager.deactivate_building_manager()
-		upgrades.toggle_skill_tree(true)
+		upgrades.toggle_upgrade_panel(true)
 
 func can_consume_points(amount: int) -> bool:
 	if current_score - amount < 0:
@@ -40,7 +38,6 @@ func check_game_state(paused: bool) -> void:
 
 func next_level() -> void:
 	check_game_state(false)
-	upgrades.toggle_skill_tree(false)
+	upgrades.toggle_upgrade_panel(false)
 	current_max_score *= 5 
 	game_ui.update_score_ui(float(current_score), float(current_max_score))
-	building_manager.init_new_round()

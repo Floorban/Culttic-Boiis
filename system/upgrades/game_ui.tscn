@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://drl85mh4n5uff"]
+[gd_scene format=3 uid="uid://drl85mh4n5uff"]
 
 [ext_resource type="Script" uid="uid://c5j2exokufugr" path="res://system/upgrades/game_ui.gd" id="1_oaw30"]
 [ext_resource type="Texture2D" uid="uid://bdfjcksnww7hw" path="res://asset/circle.png" id="1_ue6oa"]
 
-[node name="GameUI" type="Control"]
+[node name="GameUI" type="Control" unique_id=24144602]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_oaw30")
 
-[node name="ProgressBar" type="TextureProgressBar" parent="."]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1675079418]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 1
 anchors_preset = -1
@@ -33,7 +33,7 @@ texture_progress = ExtResource("1_ue6oa")
 tint_under = Color(0.2291123, 0.22911209, 0.22911227, 0.08627451)
 tint_progress = Color(0.03499972, 0.99509245, 0, 1)
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1434127847]
 custom_minimum_size = Vector2(3000, 3000)
 layout_mode = 1
 anchors_preset = 8
