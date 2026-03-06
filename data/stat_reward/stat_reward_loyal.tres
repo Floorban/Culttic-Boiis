@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_41gal")
 stat = ExtResource("2_41gal")
+amount = 10
 metadata/_custom_type_script = "uid://5wgoljesjyol"

@@ -5,5 +5,5 @@ extends Resource
 @export var task_description : String
 @export var duration : float
 
-@export var cost : float
+@export var costs : Array[StatCost]
 @export var rewards : Array[StatReward]

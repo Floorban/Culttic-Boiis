@@ -11,6 +11,21 @@ func _ready() -> void:
 		stats[slot.stat] = 0
 
 
+func can_afford(costs: Array[StatCost]) -> bool:
+	if costs.is_empty():
+		return true
+	for cost in costs:
+		if stats[cost.stat] < cost.amount:
+			return false
+	return true
+
+
+func pay_costs(costs:Array[StatCost]) -> void:
+	for cost in costs:
+		stats[cost.stat] -= cost.amount
+		_update_stat_ui(cost.stat)
+
+
 func get_stats(task: Task) -> void:
 	for reward in task.rewards:
 		stats[reward.stat] += reward.amount
