@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drk220wxciily"]
 
 [ext_resource type="Script" uid="uid://bi7sd0slj7a5n" path="res://system/screen/button/tab_button.gd" id="1_igqt3"]
-[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="1_kmq8c"]
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="1_kmq8c"]
 
 [node name="TabButton" type="Button" unique_id=524473809]
 texture_filter = 1

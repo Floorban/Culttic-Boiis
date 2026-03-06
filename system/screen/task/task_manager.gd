@@ -2,7 +2,7 @@ class_name TaskManager
 extends Node
 
 @export var task_btns: Array[TaskButton]
-@export var task_slots : Array[TaskProgress]
+@export var task_slots : Array[TaskSlot]
 
 @export var max_parallel_tasks := 1
 
@@ -27,7 +27,7 @@ func start_task(task : Task) -> bool:
 
 func _on_task_finished(task : Task) -> void:
 	_refresh_task_buttons()
-	print(task.task_name)
+	GameManager.stats_manager.get_stats(task)
 
 
 func _refresh_task_buttons() -> void:

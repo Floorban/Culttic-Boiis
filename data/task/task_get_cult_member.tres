@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_87tki")
-task_name = "Getting new cult member . . ."
+task_description = "Getting cult member . . ."
 duration = 2.0
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

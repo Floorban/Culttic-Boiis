@@ -21,8 +21,8 @@ config/icon="res://asset/ui/icon.svg"
 
 [autoload]
 
-GameManager="*res://system/autoload/game_manager.tscn"
 Signals="*res://system/autoload/signals.gd"
+GameManager="*res://system/autoload/game_manager.tscn"
 PopupPrompt="*res://system/autoload/popup_prompt.gd"
 
 [display]

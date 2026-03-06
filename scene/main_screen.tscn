@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://1ktvbleh6eme"]
 
-[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="1_r8dvm"]
 [ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/dashboard_panel.tscn" id="2_jmo0d"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_panel.tscn" id="2_l8vv1"]
@@ -10,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="7_6rrgu"]
 [ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/screen/task/task_manager.gd" id="7_akoy5"]
-[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="7_vdsnl"]
-[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_progress.tscn" id="8_akoy5"]
-[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="9_gigxy"]
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="7_vdsnl"]
+[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_slot.tscn" id="8_akoy5"]
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="11_n3x1c"]
 [ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="12_ewany"]
 [ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/screen/button/task_button.gd" id="12_n3x1c"]
 [ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="13_ewany"]
+[ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/autoload/stats/stats_manager.tscn" id="16_n3x1c"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
@@ -67,7 +66,7 @@ layout_mode = 0
 [node name="SettingsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
 layout_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background/PanelContainer" unique_id=1626715450]
+[node name="ActionPanel" type="MarginContainer" parent="MarginContainer/Background/PanelContainer" unique_id=1626715450]
 custom_minimum_size = Vector2(620, 350)
 layout_mode = 1
 anchors_preset = 3
@@ -82,11 +81,11 @@ grow_vertical = 0
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 50
 
-[node name="ActionPanel" type="PanelContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer" unique_id=2081309098]
+[node name="Background" type="PanelContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel" unique_id=2081309098]
 custom_minimum_size = Vector2(600, 310)
 layout_mode = 2
 
-[node name="TaskManager" type="MarginContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel" unique_id=1305268272 node_paths=PackedStringArray("task_btns", "task_slots")]
+[node name="TaskManager" type="MarginContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background" unique_id=1305268272 node_paths=PackedStringArray("task_btns", "task_slots")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_left = 30
@@ -95,18 +94,18 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 script = ExtResource("7_akoy5")
 task_btns = [NodePath("HBoxContainer/VBoxContainer/ButtonGet"), NodePath("HBoxContainer/VBoxContainer/ButonBuild"), NodePath("HBoxContainer/VBoxContainer/ButonSacrifice")]
-task_slots = [NodePath("HBoxContainer/VBoxContainer2/ProgressInfo1"), NodePath("HBoxContainer/VBoxContainer2/ProgressInfo2"), NodePath("HBoxContainer/VBoxContainer2/ProgressInfo3")]
+task_slots = [NodePath("HBoxContainer/VBoxContainer2/TaskSlot1"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot2"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot3")]
 max_parallel_tasks = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager" unique_id=104567733]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager" unique_id=104567733]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=799259506]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer" unique_id=799259506]
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="ButtonGet" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=2027793440]
+[node name="ButtonGet" type="Button" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer" unique_id=2027793440]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
@@ -117,7 +116,7 @@ text = "Get Member"
 script = ExtResource("12_n3x1c")
 task = ExtResource("11_n3x1c")
 
-[node name="ButonBuild" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
+[node name="ButonBuild" type="Button" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
@@ -128,7 +127,7 @@ text = "Build Church"
 script = ExtResource("12_n3x1c")
 task = ExtResource("12_ewany")
 
-[node name="ButonSacrifice" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=380726272]
+[node name="ButonSacrifice" type="Button" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer" unique_id=380726272]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
@@ -139,23 +138,23 @@ text = "Sacrifice"
 script = ExtResource("12_n3x1c")
 task = ExtResource("13_ewany")
 
-[node name="Control" type="Control" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=1305802962]
+[node name="Control" type="Control" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer" unique_id=1305802962]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=888025448]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer" unique_id=888025448]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="ProgressInfo1" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("8_akoy5")]
+[node name="TaskSlot1" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("8_akoy5")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ProgressInfo2" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1149582299 instance=ExtResource("8_akoy5")]
+[node name="TaskSlot2" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1149582299 instance=ExtResource("8_akoy5")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ProgressInfo3" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1675409510 instance=ExtResource("8_akoy5")]
+[node name="TaskSlot3" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1675409510 instance=ExtResource("8_akoy5")]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -187,149 +186,6 @@ btn_display_name = "Overview"
 layout_mode = 2
 btn_display_name = "Settings"
 
-[node name="StatsPanel" type="Panel" parent="MarginContainer/Background" unique_id=421974663]
+[node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 instance=ExtResource("16_n3x1c")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -380.0
-offset_top = -460.0
-offset_bottom = 460.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background/StatsPanel" unique_id=974169568]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer" unique_id=538746788]
-layout_mode = 2
-theme_override_constants/separation = 36
-
-[node name="Button" type="Button" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1163938518]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-
-[node name="Statsbar" type="VBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1493027421]
-layout_mode = 2
-theme_override_constants/separation = 36
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1102063089]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=489819472]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=376757679]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=209828314]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_gigxy")
-theme_override_font_sizes/font_size = 42
-text = "12345498"
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=532685876]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=729812641]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=1509896833]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=552382866]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_gigxy")
-theme_override_font_sizes/font_size = 42
-text = "12345498"
-vertical_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=866836522]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=324559789]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=2065670719]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=1656232555]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_gigxy")
-theme_override_font_sizes/font_size = 42
-text = "1234"
-vertical_alignment = 1
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=2003027158]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=5086597]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=1894458186]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=1822760985]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_gigxy")
-theme_override_font_sizes/font_size = 42
-text = "12345498"
-vertical_alignment = 1
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1444294508]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=2046047186]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=324875285]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=1569165519]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_gigxy")
-theme_override_font_sizes/font_size = 42
-text = "12345498"
-vertical_alignment = 1
-
-[node name="Button2" type="Button" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1901541875]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2

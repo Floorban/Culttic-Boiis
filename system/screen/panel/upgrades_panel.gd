@@ -1,5 +1,5 @@
 extends SubPanel
-class_name UpgradesPanel
+class_name UpgradesManager
 
 signal upgrade_changed(upgrade: UpgradeData, level: int)
 
@@ -9,7 +9,7 @@ var upgrade_levels: Dictionary[UpgradeData, int] = {}
 
 
 func _ready() -> void:
-	GameManager.upgrades = self
+	GameManager.upgrades_manager = self
 	for upgrade_btn in upgrade_btns:
 		upgrades.append(upgrade_btn.upgrade)
 	for upgrade in upgrades:

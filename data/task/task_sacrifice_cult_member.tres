@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_eo33j")
-task_name = "Sacrificing for the good . . ."
+task_description = "Sacrifice for good . . ."
 duration = 1.0
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

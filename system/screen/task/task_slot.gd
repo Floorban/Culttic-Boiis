@@ -1,4 +1,5 @@
-class_name TaskProgress extends VBoxContainer
+class_name TaskSlot
+extends VBoxContainer
 
 signal task_finished(task : Task)
 
@@ -21,7 +22,7 @@ func start_task(task : Task) -> void:
 	current_task = task
 	is_running = true
 	task_progress_bar.value = 0
-	task_label.text = task.task_name
+	task_label.text = task.task_description
 	
 	task_timer.wait_time = task.duration / task_progress_bar.max_value
 	task_timer.start()
