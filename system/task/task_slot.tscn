@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://k4eyfmopulqj"]
 
-[ext_resource type="Script" uid="uid://cb522wlapu0i8" path="res://system/screen/task/task_slot.gd" id="1_5iu2d"]
+[ext_resource type="Script" uid="uid://cb522wlapu0i8" path="res://system/task/task_slot.gd" id="1_5iu2d"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="1_b0pyi"]
 [ext_resource type="Theme" uid="uid://da4he3aydg2fo" path="res://asset/themes/progress_bar_theme.tres" id="2_k8h5h"]
 

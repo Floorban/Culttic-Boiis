@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="7_6rrgu"]
-[ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/screen/task/task_manager.gd" id="7_akoy5"]
+[ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/task/task_manager.gd" id="7_akoy5"]
 [ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="7_vdsnl"]
-[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_slot.tscn" id="8_akoy5"]
+[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/task/task_slot.tscn" id="8_akoy5"]
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="11_n3x1c"]
 [ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="12_ewany"]
 [ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/screen/button/task_button.gd" id="12_n3x1c"]
 [ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="13_ewany"]
-[ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/autoload/stats/stats_manager.tscn" id="16_n3x1c"]
+[ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
@@ -95,7 +95,6 @@ theme_override_constants/margin_bottom = 20
 script = ExtResource("7_akoy5")
 task_btns = [NodePath("HBoxContainer/VBoxContainer/ButtonGet"), NodePath("HBoxContainer/VBoxContainer/ButonBuild"), NodePath("HBoxContainer/VBoxContainer/ButonSacrifice")]
 task_slots = [NodePath("HBoxContainer/VBoxContainer2/TaskSlot1"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot2"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot3")]
-max_parallel_tasks = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager" unique_id=104567733]
 layout_mode = 2

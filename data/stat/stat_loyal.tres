@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://t4owggge5keo"]
+
+[ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="1_x7hnj"]
+[ext_resource type="Texture2D" uid="uid://cfnnrbh21q6bv" path="res://asset/ArtOfScrolls_BigWander_Spritesheet.png" id="2_x7hnj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psaaq"]
+atlas = ExtResource("2_x7hnj")
+region = Rect2(112, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_x7hnj")
+stat_name = "Soul"
+stat_description = "May the lore please you"
+stat_icon = SubResource("AtlasTexture_psaaq")
+metadata/_custom_type_script = "uid://df1xrlbakiuj1"

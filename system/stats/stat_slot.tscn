@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dfdtyhpqrqn8e"]
+
+[ext_resource type="Script" uid="uid://b6e6ccv87y0mm" path="res://system/stats/stat_slot.gd" id="1_rgkat"]
+[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="2_atb2c"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_rm8ao"]
+
+[node name="StatSlot" type="HBoxContainer" unique_id=1306294195]
+script = ExtResource("1_rgkat")
+
+[node name="StatIcon" type="TextureRect" parent="." unique_id=127034651]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_atb2c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="." unique_id=16626073]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatNumLabel" type="Label" parent="." unique_id=552914997]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rm8ao")
+theme_override_font_sizes/font_size = 42
+text = "12345498"
+vertical_alignment = 1

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dpdrr8e6dwttd"]
+
+[ext_resource type="Script" uid="uid://dcsjk6w172cqa" path="res://system/stats/stats_manager.gd" id="1_q63yl"]
+[ext_resource type="PackedScene" uid="uid://dfdtyhpqrqn8e" path="res://system/stats/stat_slot.tscn" id="2_sibpc"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="3_6jwxc"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="4_lqh3s"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="5_83inl"]
+[ext_resource type="Resource" uid="uid://t4owggge5keo" path="res://data/stat/stat_loyal.tres" id="6_02dsw"]
+
+[node name="StatsManager" type="Panel" unique_id=654268750]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -460.0
+offset_bottom = 460.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_q63yl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=148964352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=463214209]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1033205296]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Statsbar" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=295244314]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="StatSlot1" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=1306294195 instance=ExtResource("2_sibpc")]
+layout_mode = 2
+stat = ExtResource("3_6jwxc")
+
+[node name="StatSlot2" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=335472710 instance=ExtResource("2_sibpc")]
+layout_mode = 2
+stat = ExtResource("4_lqh3s")
+
+[node name="StatSlot3" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=1823944822 instance=ExtResource("2_sibpc")]
+layout_mode = 2
+stat = ExtResource("5_83inl")
+
+[node name="StatSlot4" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=1779843535 instance=ExtResource("2_sibpc")]
+layout_mode = 2
+stat = ExtResource("6_02dsw")
