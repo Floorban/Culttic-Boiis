@@ -10,12 +10,14 @@ var level := 0:
 		level = clampi(value, 0, upgrade.max_level)
 		upgrade_level.text = str(level) + "/" + str(upgrade.max_level)
 
+
 func _ready() -> void:
 	if get_parent() is UpgradeButton:
 		hide()
 	_init_line()
 	pressed.connect(_on_pressed)
-	
+
+
 func _init_line() -> void:
 	var p := get_parent()
 	if p is not UpgradeButton:
@@ -34,6 +36,7 @@ func _init_line() -> void:
 	#skill_branch.add_point(global_position + size / 2)
 	#skill_branch.add_point(p.global_position + p.size / 2)
 
+
 func _on_pressed() -> void:
 	if level == upgrade.max_level or not GameManager.can_consume_points(upgrade.needed_points):
 		return
@@ -43,6 +46,7 @@ func _on_pressed() -> void:
 	GameManager.consume_points(upgrade.needed_points)
 	GameManager.upgrades.unlock(upgrade)
 	_unlock_next_upgrades()
+
 
 func _unlock_next_upgrades() -> void:
 	var upgrades = get_children()

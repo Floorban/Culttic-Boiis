@@ -8,7 +8,31 @@
 [ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/radar_panel.tscn" id="4_bor6b"]
 [ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
+[ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="7_6rrgu"]
+[ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/screen/task/task_manager.gd" id="7_akoy5"]
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="7_vdsnl"]
+[ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/screen/task/task.gd" id="8_1sshg"]
+[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_progress.tscn" id="8_akoy5"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="9_gigxy"]
+[ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/screen/button/task_button.gd" id="12_n3x1c"]
+
+[sub_resource type="Resource" id="Resource_n3x1c"]
+script = ExtResource("8_1sshg")
+task_name = "dsada"
+duration = 3.0
+metadata/_custom_type_script = "uid://d1qbxvn7m407i"
+
+[sub_resource type="Resource" id="Resource_ewany"]
+script = ExtResource("8_1sshg")
+task_name = "11e21ff"
+duration = 2.0
+metadata/_custom_type_script = "uid://d1qbxvn7m407i"
+
+[sub_resource type="Resource" id="Resource_avamn"]
+script = ExtResource("8_1sshg")
+task_name = "hj7"
+duration = 5.0
+metadata/_custom_type_script = "uid://d1qbxvn7m407i"
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
@@ -45,6 +69,7 @@ offset_bottom = 820.0
 
 [node name="DashboardPanel" parent="MarginContainer/Background/PanelContainer" unique_id=952982154 instance=ExtResource("2_jmo0d")]
 layout_mode = 0
+script = ExtResource("7_6rrgu")
 
 [node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
 layout_mode = 0
@@ -57,6 +82,97 @@ layout_mode = 0
 
 [node name="SettingsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
 layout_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background/PanelContainer" unique_id=1626715450]
+custom_minimum_size = Vector2(620, 350)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -350.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
+
+[node name="ActionPanel" type="PanelContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer" unique_id=2081309098]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+
+[node name="TaskManager" type="MarginContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel" unique_id=1305268272 node_paths=PackedStringArray("task_btns", "task_slots")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+script = ExtResource("7_akoy5")
+task_btns = [NodePath("HBoxContainer/VBoxContainer/ButtonDrone"), NodePath("HBoxContainer/VBoxContainer/ButonSell"), NodePath("HBoxContainer/VBoxContainer/ButtonDig")]
+task_slots = [NodePath("HBoxContainer/VBoxContainer2/ProgressInfo1"), NodePath("HBoxContainer/VBoxContainer2/ProgressInfo2"), NodePath("HBoxContainer/VBoxContainer2/ProgressInfo3")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager" unique_id=104567733]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=799259506]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ButtonDrone" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=2027793440]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("7_vdsnl")
+toggle_mode = true
+text = "Send a drone"
+script = ExtResource("12_n3x1c")
+task = SubResource("Resource_n3x1c")
+
+[node name="ButonSell" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("7_vdsnl")
+toggle_mode = true
+text = "Sell the inventory"
+script = ExtResource("12_n3x1c")
+task = SubResource("Resource_ewany")
+
+[node name="ButtonDig" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=380726272]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("7_vdsnl")
+toggle_mode = true
+text = "Dig the planet"
+script = ExtResource("12_n3x1c")
+task = SubResource("Resource_avamn")
+
+[node name="Control" type="Control" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=1305802962]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=888025448]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ProgressInfo1" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("8_akoy5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProgressInfo2" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1149582299 instance=ExtResource("8_akoy5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProgressInfo3" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1675409510 instance=ExtResource("8_akoy5")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background" unique_id=233926735]
 unique_name_in_owner = true

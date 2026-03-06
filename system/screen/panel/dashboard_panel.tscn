@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://cl11d77lbfnnt"]
 
-[ext_resource type="Script" uid="uid://bb356ol5u0cn" path="res://system/screen/panel/dashboard_panel.gd" id="1_thcye"]
+[ext_resource type="Script" uid="uid://bb356ol5u0cn" path="res://system/screen/panel/action_panel.gd" id="1_thcye"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
 [ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="2_xtg88"]
-[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="4_v1r7b"]
-[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_progress.tscn" id="5_efr13"]
 
 [node name="DashboardPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(1300, 820)
@@ -209,78 +207,3 @@ anchor_bottom = 1.0
 offset_top = -350.0
 offset_right = 550.0
 grow_vertical = 0
-
-[node name="ActionsPanel" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=1552188092]
-custom_minimum_size = Vector2(620, 400)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -550.0
-offset_top = -330.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/ActionsPanel" unique_id=554896757]
-layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 40
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer" unique_id=1821022318]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer" unique_id=383258617]
-layout_mode = 2
-theme_override_constants/separation = 32
-alignment = 1
-
-[node name="ButtonDrone" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=240007690]
-unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-theme = ExtResource("4_v1r7b")
-toggle_mode = true
-text = "Send a drone"
-
-[node name="ButonSell" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2016163044]
-unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-theme = ExtResource("4_v1r7b")
-toggle_mode = true
-text = "Sell the inventory"
-
-[node name="ButtonDig" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=636695800]
-unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-theme = ExtResource("4_v1r7b")
-toggle_mode = true
-text = "Dig the planet"
-
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer" unique_id=778152394]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer" unique_id=371731580]
-layout_mode = 2
-theme_override_constants/separation = 36
-
-[node name="ProgressInfo1" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("5_efr13")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="ProgressInfo2" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=294242865 instance=ExtResource("5_efr13")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="ProgressInfo3" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1682648702 instance=ExtResource("5_efr13")]
-unique_name_in_owner = true
-layout_mode = 2

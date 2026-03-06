@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://da4he3aydg2fo" path="res://progress_bar_theme.tres" id="2_k8h5h"]
 
 [node name="TaskProgress" type="VBoxContainer" unique_id=297168396]
+custom_minimum_size = Vector2(290, 75)
 offset_right = 290.0
 offset_bottom = 76.0
 theme_override_constants/separation = 12

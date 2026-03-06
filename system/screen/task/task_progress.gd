@@ -1,19 +1,39 @@
 class_name TaskProgress extends VBoxContainer
 
+signal task_finished(task : Task)
 
 @onready var task_progress_bar: ProgressBar = $TaskProgressBar
 @onready var task_label: Label = $TaskLabel
 
+var task_timer : Timer
+var current_task : Task
+var is_running := false
 
-func start_action(action_name:String, duration:float):
+
+func _ready() -> void:
+	task_timer = Timer.new()
+	add_child(task_timer)
+	task_timer.timeout.connect(_tick)
+	hide()
+
+
+func start_task(task : Task) -> void:
+	current_task = task
+	is_running = true
 	task_progress_bar.value = 0
-	task_label.text = action_name
+	task_label.text = task.task_name
+	
+	task_timer.wait_time = task.duration / task_progress_bar.max_value
+	task_timer.start()
+	show()
 
 
-func _ready():
-	$Timer.timeout.connect(_tick)
-
-func _tick():
+func _tick() -> void:
 	task_progress_bar.value += task_progress_bar.step
 	if task_progress_bar.value >= task_progress_bar.max_value:
+		task_timer.stop()
+		is_running = false
 		task_progress_bar.value = 0
+		task_finished.emit(current_task)
+		current_task = null
+		hide()
