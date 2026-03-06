@@ -1,38 +1,51 @@
 class_name StatsManager
 extends Control
 
-var stats : Dictionary = {}
-@export var stat_slots : Array[StatSlot]
+signal stat_changed(stat: Stat, value: int)
 
+var stats : Dictionary = {}
+@export var starting_stats : Array[StatChange]
+@export var stat_slots : Array[StatSlot]
 
 func _ready() -> void:
 	GameManager.stats_manager = self
+	for s in starting_stats:
+		stats[s.stat] = s.amount
+	
 	for slot in stat_slots:
 		stats[slot.stat] = 0
 
 
-func can_afford(costs: Array[StatChange]) -> bool:
-	if costs.is_empty():
-		return true
-	for cost in costs:
-		if stats[cost.stat] < cost.amount:
+func get_stat(stat: Stat) -> int:
+	return stats.get(stat, 0)
+
+
+func add_stat(stat: Stat, amount: int) -> void:
+	stats[stat] += amount
+	stat_changed.emit(stat, stats[stat])
+
+
+func spend_stat(stat: Stat, amount: int) -> bool:
+	if stats[stat] < amount:
+		return false
+	
+	stats[stat] -= amount
+	stat_changed.emit(stat, stats[stat])
+	return true
+
+
+func apply_rewards(rewards: Array[StatChange]) -> void:
+	for r in rewards:
+		add_stat(r.stat, r.amount)
+
+
+func can_pay(costs: Array[StatChange]) -> bool:
+	for c in costs:
+		if get_stat(c.stat) < c.amount:
 			return false
 	return true
 
 
-func pay_costs(costs: Array[StatChange]) -> void:
-	for cost in costs:
-		stats[cost.stat] -= cost.amount
-		_update_stat_ui(cost.stat)
-
-
-func get_stats(task: Task) -> void:
-	for reward in task.rewards:
-		stats[reward.stat] += reward.amount
-		_update_stat_ui(reward.stat)
-
-
-func _update_stat_ui(stat: Stat) -> void:
-	for slot in stat_slots:
-		if slot.stat == stat:
-			slot.set_value(stats[stat])
+func pay_costs(costs : Array[StatChange]) -> void:
+	for c in costs:
+		spend_stat(c.stat, c.amount)

@@ -15,14 +15,16 @@ func _ready() -> void:
 		s.task_finished.connect(_on_task_finished)
 
 
-func start_task(task : Task) -> bool:
-	if not GameManager.stats_manager.can_afford(task.costs):
+func start_task(task : Task, btn: TaskButton) -> bool:
+	if not GameManager.stats_manager.can_pay(task.costs):
 		print("Not enough resources")
+		btn.button_press_failed()
 		return false
+		
+	GameManager.stats_manager.pay_costs(task.costs)
 	
 	for slot in task_slots:
 		if not slot.is_running:
-			GameManager.stats_manager.pay_costs(task.costs)
 			slot.start_task(task)
 			_refresh_task_buttons()
 			return true
@@ -31,8 +33,8 @@ func start_task(task : Task) -> bool:
 
 
 func _on_task_finished(task : Task) -> void:
+	GameManager.stats_manager.apply_rewards(task.rewards)
 	_refresh_task_buttons()
-	GameManager.stats_manager.get_stats(task)
 
 
 func _refresh_task_buttons() -> void:

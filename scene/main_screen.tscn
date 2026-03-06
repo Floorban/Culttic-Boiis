@@ -115,17 +115,6 @@ text = "Get Member"
 script = ExtResource("12_n3x1c")
 task = ExtResource("11_n3x1c")
 
-[node name="ButonBuild" type="Button" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
-unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-theme = ExtResource("7_vdsnl")
-toggle_mode = true
-text = "Build Church"
-script = ExtResource("12_n3x1c")
-task = ExtResource("12_ewany")
-
 [node name="ButonSacrifice" type="Button" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer" unique_id=380726272]
 unique_name_in_owner = true
 texture_filter = 1
@@ -136,6 +125,17 @@ toggle_mode = true
 text = "Sacrifice"
 script = ExtResource("12_n3x1c")
 task = ExtResource("13_ewany")
+
+[node name="ButonBuild" type="Button" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("7_vdsnl")
+toggle_mode = true
+text = "Build Church"
+script = ExtResource("12_n3x1c")
+task = ExtResource("12_ewany")
 
 [node name="Control" type="Control" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer" unique_id=1305802962]
 layout_mode = 2
@@ -185,6 +185,7 @@ btn_display_name = "Overview"
 layout_mode = 2
 btn_display_name = "Settings"
 
-[node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 instance=ExtResource("16_n3x1c")]
+[node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 node_paths=PackedStringArray("stat_slots") instance=ExtResource("16_n3x1c")]
 unique_name_in_owner = true
 layout_mode = 1
+stat_slots = []
