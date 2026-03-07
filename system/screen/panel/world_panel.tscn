@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b4b8pivkpdt40"]
 
-[ext_resource type="Script" uid="uid://chejf2p2e1j1p" path="res://system/screen/panel/radar_panel.gd" id="1_sjq33"]
+[ext_resource type="Script" uid="uid://chejf2p2e1j1p" path="res://system/screen/panel/world_panel.gd" id="1_sjq33"]
 
-[node name="RadarPanel" type="Control" unique_id=952982154]
-custom_minimum_size = Vector2(1300, 820)
+[node name="WorldPanel" type="Control" unique_id=952982154]
+custom_minimum_size = Vector2(600, 820)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1300.0
+offset_right = 600.0
 offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -27,4 +27,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 36
-text = "Radar"
+text = "World"

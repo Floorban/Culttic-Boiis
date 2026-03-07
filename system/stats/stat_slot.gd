@@ -26,6 +26,7 @@ var fail_tween : Tween
 func _pay_with_stat_failed(changed_stat: Stat) -> void:
 	if changed_stat != stat:
 		return
+		
 	var og_color = Color.WHITE
 	stat_num_label.modulate = og_color
 	

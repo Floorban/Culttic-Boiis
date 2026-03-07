@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bb356ol5u0cn" path="res://system/screen/panel/action_panel.gd" id="1_thcye"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
-[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="2_xtg88"]
 
 [node name="DashboardPanel" type="Control" unique_id=952982154]
-custom_minimum_size = Vector2(1300, 820)
+custom_minimum_size = Vector2(600, 820)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1300.0
+offset_right = 600.0
 offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -40,9 +39,9 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 
 [node name="StatsOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=565606917]
-custom_minimum_size = Vector2(550, 330)
+custom_minimum_size = Vector2(500, 330)
 layout_mode = 1
-offset_right = 550.0
+offset_right = 500.0
 offset_bottom = 330.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/StatsOverview" unique_id=446327672]
@@ -162,48 +161,12 @@ theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 40
 text = "26 : 24"
 
-[node name="StatsGraph" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=1612853013]
-custom_minimum_size = Vector2(620, 280)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -600.0
-offset_bottom = 280.0
-grow_horizontal = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/StatsGraph" unique_id=870325006]
-layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsGraph/MarginContainer" unique_id=68301777]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/StatsGraph/MarginContainer/HBoxContainer" unique_id=806062480]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-texture = ExtResource("2_xtg88")
-expand_mode = 1
-
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsGraph/MarginContainer/HBoxContainer" unique_id=509490296]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/PanelContainer/StatsGraph/MarginContainer/HBoxContainer" unique_id=1443267866]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-texture = ExtResource("2_xtg88")
-expand_mode = 1
-
 [node name="PlanetOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=571541127]
-custom_minimum_size = Vector2(550, 350)
+custom_minimum_size = Vector2(500, 350)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -350.0
-offset_right = 550.0
+offset_right = 500.0
 grow_vertical = 0

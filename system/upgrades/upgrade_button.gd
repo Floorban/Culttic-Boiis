@@ -12,12 +12,14 @@ var level := 0:
 
 
 func _ready() -> void:
-	if get_parent() is UpgradeButton:
-		hide()
-	_init_line()
+	mouse_entered.connect(_on_mouse_enter)
+	mouse_exited.connect(_on_mouse_exited)
 	pressed.connect(_on_pressed)
+	_init_line()
 	if upgrade:
 		texture_normal = upgrade.upgrade_icon
+	if get_parent() is UpgradeButton:
+		hide()
 
 
 func _init_line() -> void:
@@ -37,6 +39,14 @@ func _init_line() -> void:
 	
 	#skill_branch.add_point(global_position + size / 2)
 	#skill_branch.add_point(p.global_position + p.size / 2)
+
+
+func _on_mouse_enter() -> void:
+	GameManager.upgrades_manager.show_upgrade_info(upgrade)
+
+
+func _on_mouse_exited() -> void:
+	GameManager.upgrades_manager.disable_upgrade_info(true)
 
 
 func _on_pressed() -> void:

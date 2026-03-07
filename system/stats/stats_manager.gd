@@ -57,6 +57,7 @@ func apply_rewards(rewards: Array[StatChange]) -> void:
 func can_pay(costs: Array[StatChange]) -> bool:
 	for c in costs:
 		if get_stat(c.stat) < c.amount:
+			stat_cost_failed.emit(c.stat)
 			return false
 	return true
 
@@ -64,7 +65,3 @@ func can_pay(costs: Array[StatChange]) -> bool:
 func pay_costs(costs : Array[StatChange]) -> void:
 	for c in costs:
 		spend_stat(c.stat, c.amount)
-
-
-func pay_failed(stat: Stat) -> void:
-	stat_cost_failed.emit(stat)

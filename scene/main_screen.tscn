@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/dashboard_panel.tscn" id="2_jmo0d"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="2_l8vv1"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="3_n877d"]
-[ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/radar_panel.tscn" id="4_bor6b"]
+[ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/world_panel.tscn" id="4_bor6b"]
 [ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="7_6rrgu"]
@@ -57,7 +57,7 @@ script = ExtResource("7_6rrgu")
 [node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
 layout_mode = 0
 
-[node name="RadarPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
+[node name="WorldPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
 layout_mode = 0
 
 [node name="OverviewPanel" parent="MarginContainer/Background/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
@@ -67,19 +67,19 @@ layout_mode = 0
 layout_mode = 0
 
 [node name="ActionPanel" type="MarginContainer" parent="MarginContainer/Background/PanelContainer" unique_id=1626715450]
-custom_minimum_size = Vector2(620, 350)
+custom_minimum_size = Vector2(620, 820)
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -620.0
-offset_top = -350.0
+anchor_bottom = 0.5
+offset_left = -660.0
+offset_top = -400.0
+offset_bottom = 400.0
 grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 50
+grow_vertical = 2
+theme_override_constants/margin_right = 10
 
 [node name="Background" type="PanelContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel" unique_id=2081309098]
 custom_minimum_size = Vector2(600, 310)
@@ -94,7 +94,7 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 script = ExtResource("7_akoy5")
 task_btns = [NodePath("HBoxContainer/VBoxContainer/ButtonGet"), NodePath("HBoxContainer/VBoxContainer/ButonBuild"), NodePath("HBoxContainer/VBoxContainer/ButonSacrifice")]
-task_slots = [NodePath("HBoxContainer/VBoxContainer2/TaskSlot1"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot2"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot3")]
+task_slots = [NodePath("HBoxContainer/VBoxContainer2/TaskSlot1"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot2"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot3"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot4"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot5"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot6"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot7"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot8"), NodePath("HBoxContainer/VBoxContainer2/TaskSlot9")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager" unique_id=104567733]
 layout_mode = 2
@@ -143,18 +143,33 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer" unique_id=888025448]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 10
 
 [node name="TaskSlot1" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("8_akoy5")]
-unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TaskSlot2" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1149582299 instance=ExtResource("8_akoy5")]
-unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TaskSlot3" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1675409510 instance=ExtResource("8_akoy5")]
-unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TaskSlot4" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1975723075 instance=ExtResource("8_akoy5")]
+layout_mode = 2
+
+[node name="TaskSlot5" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=595575892 instance=ExtResource("8_akoy5")]
+layout_mode = 2
+
+[node name="TaskSlot6" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=405638221 instance=ExtResource("8_akoy5")]
+layout_mode = 2
+
+[node name="TaskSlot7" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=1946465370 instance=ExtResource("8_akoy5")]
+layout_mode = 2
+
+[node name="TaskSlot8" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=413161947 instance=ExtResource("8_akoy5")]
+layout_mode = 2
+
+[node name="TaskSlot9" parent="MarginContainer/Background/PanelContainer/ActionPanel/Background/TaskManager/HBoxContainer/VBoxContainer2" unique_id=774512097 instance=ExtResource("8_akoy5")]
 layout_mode = 2
 
 [node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background" unique_id=233926735]

@@ -30,6 +30,8 @@ region = Rect2(0, 32, 16, 16)
 
 [resource]
 script = ExtResource("6_ua2fi")
+upgrade_name = "upgrade I"
+upgrade_description = "this upgrade can make you cum in 2s  this upgrade can make you cum in 2s"
 upgrade_icon = SubResource("AtlasTexture_4ylsh")
 costs = Array[ExtResource("1_b3s61")]([SubResource("Resource_k0qrf")])
 effects = Array[ExtResource("3_4ylsh")]([SubResource("Resource_a7l6t")])

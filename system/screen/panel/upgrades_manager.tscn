@@ -6,18 +6,19 @@
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="4_w3hvi"]
 
 [node name="UpgradesManager" type="Control" unique_id=952982154 node_paths=PackedStringArray("upgrade_btns")]
-custom_minimum_size = Vector2(1300, 820)
+custom_minimum_size = Vector2(600, 820)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1300.0
+offset_right = 600.0
 offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 script = ExtResource("1_fmctd")
-upgrade_btns = [NodePath("SkillButton"), NodePath("SkillButton/SkillButton2"), NodePath("SkillButton/SkillButton2/SkillButton4"), NodePath("SkillButton/SkillButton2/SkillButton5"), NodePath("SkillButton/SkillButton3"), NodePath("SkillButton/SkillButton3/SkillButton6"), NodePath("SkillButton/SkillButton3/SkillButton7")]
+upgrade_btns = [NodePath("BG/SkillButton"), NodePath("BG/SkillButton/SkillButton2"), NodePath("BG/SkillButton/SkillButton2/SkillButton4"), NodePath("BG/SkillButton/SkillButton2/SkillButton5"), NodePath("BG/SkillButton/SkillButton3"), NodePath("BG/SkillButton/SkillButton3/SkillButton6"), NodePath("BG/SkillButton/SkillButton3/SkillButton7")]
 
 [node name="BG" type="ColorRect" parent="." unique_id=1390644060]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,14 +27,71 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
 
-[node name="UpgradeInfoSlot" type="PanelContainer" parent="." unique_id=211787367]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(350, 170)
+[node name="SkillButton" parent="BG" unique_id=1521863950 instance=ExtResource("1_217a5")]
 layout_mode = 0
-offset_left = 271.0
-offset_top = 125.0
-offset_right = 621.0
-offset_bottom = 295.0
+offset_left = 274.0
+offset_top = 438.0
+offset_right = 374.0
+offset_bottom = 538.0
+disabled = false
+upgrade = ExtResource("3_xuksn")
+
+[node name="SkillButton2" parent="BG/SkillButton" unique_id=779054283 instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -246.0
+offset_right = -196.0
+offset_bottom = 50.0
+upgrade = ExtResource("3_xuksn")
+
+[node name="SkillButton4" parent="BG/SkillButton/SkillButton2" unique_id=475773940 instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -263.0
+offset_top = -2.0
+offset_right = -213.0
+offset_bottom = 48.0
+upgrade = ExtResource("3_xuksn")
+
+[node name="SkillButton5" parent="BG/SkillButton/SkillButton2" unique_id=551151924 instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -166.0
+offset_right = 47.0
+offset_bottom = -116.0
+upgrade = ExtResource("3_xuksn")
+
+[node name="SkillButton3" parent="BG/SkillButton" unique_id=685709900 instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -2.0
+offset_right = 270.0
+offset_bottom = 48.0
+upgrade = ExtResource("3_xuksn")
+
+[node name="SkillButton6" parent="BG/SkillButton/SkillButton3" unique_id=1365176302 instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -170.0
+offset_right = 49.0
+offset_bottom = -120.0
+upgrade = ExtResource("3_xuksn")
+
+[node name="SkillButton7" parent="BG/SkillButton/SkillButton3" unique_id=292857974 instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = 209.0
+offset_right = 259.0
+offset_bottom = 50.0
+upgrade = ExtResource("3_xuksn")
+
+[node name="UpgradeInfoSlot" type="PanelContainer" parent="." unique_id=211787367]
+custom_minimum_size = Vector2(600, 175)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -174.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="UpgradeInfoSlot" unique_id=1321732453]
 layout_mode = 2
@@ -42,82 +100,41 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
+[node name="UpgradeControlLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer" unique_id=1890431986]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5694292, 0.96778554, 0.5030143, 1)
+theme_override_fonts/font = ExtResource("4_w3hvi")
+theme_override_font_sizes/font_size = 56
+text = "Click on upgrades to buy  them"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradeInfoSlot/MarginContainer" unique_id=49700313]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1409339004]
+[node name="UpgradeNameLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1409339004]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_w3hvi")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 38
 text = "Upgrade Name"
 
-[node name="Label2" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=87897429]
+[node name="UpgradeCostLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=87897429]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8666667, 0.85490197, 0.09411765, 1)
 theme_override_fonts/font = ExtResource("4_w3hvi")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 28
 text = "Upgrade Cost"
 
-[node name="Label3" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1362085208]
-custom_minimum_size = Vector2(0, 75)
+[node name="UpgradeEffectLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1362085208]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 78)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_w3hvi")
-theme_override_font_sizes/font_size = 26
-text = "Upgrade Effect sddsad dsad sadsadasdasdasdsadasdsadasdasdasdasdasdasdsaadsadasd"
+theme_override_font_sizes/font_size = 28
+text = "Upgrade Effect sddsad dsad sadsadasdasdasdsadasdsadasdasdasdasdasdasdsaadsadasddsadasdasdasdasdasda"
 autowrap_mode = 3
 clip_text = true
-
-[node name="SkillButton" parent="." unique_id=1521863950 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = 588.0
-offset_top = 549.0
-offset_right = 688.0
-offset_bottom = 649.0
-disabled = false
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton2" parent="SkillButton" unique_id=779054283 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -246.0
-offset_right = -196.0
-offset_bottom = 50.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton4" parent="SkillButton/SkillButton2" unique_id=475773940 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -263.0
-offset_top = -2.0
-offset_right = -213.0
-offset_bottom = 48.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton5" parent="SkillButton/SkillButton2" unique_id=551151924 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -166.0
-offset_right = 47.0
-offset_bottom = -116.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton3" parent="SkillButton" unique_id=685709900 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = 220.0
-offset_top = -2.0
-offset_right = 270.0
-offset_bottom = 48.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton6" parent="SkillButton/SkillButton3" unique_id=1365176302 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -1.0
-offset_top = -170.0
-offset_right = 49.0
-offset_bottom = -120.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton7" parent="SkillButton/SkillButton3" unique_id=292857974 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = 209.0
-offset_right = 259.0
-offset_bottom = 50.0
-upgrade = ExtResource("3_xuksn")
