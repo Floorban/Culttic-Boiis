@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("1_87tki")
-task_name = "cult"
+task_name = "Cult"
 task_description = "Getting cult member . . ."
 duration = 2.0
 rewards = Array[ExtResource("1_ipx63")]([SubResource("Resource_ipx63"), SubResource("Resource_dx7o3")])

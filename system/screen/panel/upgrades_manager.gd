@@ -9,8 +9,8 @@ var upgrade_levels: Dictionary[UpgradeData, int] = {}
 
 @onready var upgrade_control_label: Label = %UpgradeControlLabel
 @onready var upgrade_name_label: Label = %UpgradeNameLabel
-@onready var upgrade_cost_label: Label = %UpgradeCostLabel
 @onready var upgrade_effect_label: Label = %UpgradeEffectLabel
+@onready var upgrade_cost_label: RichTextLabel = %UpgradeCostLabel
 
 
 func _ready() -> void:
@@ -32,10 +32,8 @@ func _show_upgrade_info(upgrade: UpgradeData) -> void:
 	upgrade_name_label.text = upgrade.upgrade_name
 	upgrade_effect_label.text = upgrade.upgrade_description
 	
-	var cost := 0
 	for c in upgrade.costs:
-		cost += c.amount
-	upgrade_cost_label.text = "$ " + str(cost)
+		upgrade_cost_label.append_text(c.to_rich_text(true, false) + "    ")
 
 
 func disable_upgrade_info(disable: bool) -> void:
@@ -43,6 +41,7 @@ func disable_upgrade_info(disable: bool) -> void:
 	upgrade_name_label.visible = not disable
 	upgrade_effect_label.visible = not disable
 	upgrade_cost_label.visible = not disable
+	upgrade_cost_label.clear()
 
 
 func unlock(upgrade: UpgradeData) -> void:

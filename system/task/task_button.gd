@@ -12,6 +12,9 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_enter)
 	mouse_exited.connect(_on_mouse_exited)
 	toggled.connect(_on_task_btn_toggled)
+	
+	if task:
+		text = task.task_name
 
 
 func _on_mouse_enter() -> void:

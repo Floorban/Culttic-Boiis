@@ -4,8 +4,8 @@ extends Node
 @export var task_btns: Array[TaskButton]
 @export var task_slots : Array[TaskSlot]
 
-@onready var task_cost_label: Label = %TaskCostLabel
-@onready var task_effect_label: Label = %TaskEffectLabel
+@onready var task_cost_label: RichTextLabel = %TaskCostLabel
+@onready var task_effect_label: RichTextLabel = %TaskEffectLabel
 
 @export var max_parallel_tasks := 1
 
@@ -13,7 +13,7 @@ extends Node
 func _ready() -> void:
 	for b in task_btns:
 		b.show_task_info.connect(_show_task_info)
-		b.hide_task_info.connect(func(): disable_task_info(true))
+		b.hide_task_info.connect(_hide_task_info)
 		b.start_task_request.connect(start_task)
 	
 	for s in task_slots:
@@ -21,14 +21,16 @@ func _ready() -> void:
 
 
 func _show_task_info(task: Task) -> void:
-	disable_task_info(false)
-	task_cost_label.text = task.task_name
-	task_effect_label.text = task.task_description
+	_hide_task_info()
+	for c in task.costs:
+		task_cost_label.append_text(c.to_rich_text(true) + "\n")
+	for r in task.rewards:
+		task_effect_label.append_text(r.to_rich_text(true) + "\n")
 
 
-func disable_task_info(disable: bool) -> void:
-	task_effect_label.visible = not disable
-	task_cost_label.visible = not disable
+func _hide_task_info() -> void:
+	task_cost_label.clear()
+	task_effect_label.clear()
 
 
 func start_task(task : Task, btn: TaskButton) -> bool:

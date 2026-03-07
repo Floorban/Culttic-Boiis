@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/task/task_manager.gd" id="1_lmd8u"]
 [ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="2_em4ww"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_ypjg7"]
-[ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/screen/button/task_button.gd" id="3_ypjg7"]
-[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="4_5poxo"]
+[ext_resource type="PackedScene" uid="uid://dkus2ytbao1qb" path="res://system/task/task_button.tscn" id="3_em4ww"]
+[ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/task/task_button.gd" id="3_ypjg7"]
 [ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="5_krdqj"]
 [ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="6_itbx4"]
 [ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/task/task_slot.tscn" id="7_fbshx"]
@@ -56,33 +56,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="TaskInfo" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer" unique_id=1719834311]
 clip_contents = true
 layout_mode = 2
-theme_override_constants/separation = 12
 
-[node name="TaskCostLabel" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=596466840]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=1481936286]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8666667, 0.85490197, 0.09411765, 1)
-theme_override_fonts/font = ExtResource("2_ypjg7")
-theme_override_font_sizes/font_size = 36
-text = "Task Cost"
 
-[node name="TaskEffectLabel" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=2051762569]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 185)
+[node name="Label" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=215079129]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
 theme_override_fonts/font = ExtResource("2_ypjg7")
-theme_override_font_sizes/font_size = 27
-text = "Task Effect dsadasdasdasdasdasdasdasdasdasdasdasdasdsadasdasdasdsadasdasdasdsadsadasdsadasdsadsadasdsadasdasdasdsa"
-autowrap_mode = 3
-clip_text = true
+theme_override_font_sizes/font_size = 30
+text = "COST"
+
+[node name="TaskCostLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=1768033449]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_constants/line_separation = 4
+theme_override_fonts/normal_font = ExtResource("2_ypjg7")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+scroll_active = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=1204971918]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=224801311]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
+theme_override_fonts/font = ExtResource("2_ypjg7")
+theme_override_font_sizes/font_size = 30
+text = "GET"
+
+[node name="TaskEffectLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=426323755]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_constants/line_separation = 4
+theme_override_fonts/normal_font = ExtResource("2_ypjg7")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer" unique_id=2129212755]
 layout_mode = 2
@@ -102,16 +123,9 @@ offset_right = 200.0
 grow_vertical = 0
 theme_override_constants/separation = 24
 
-[node name="ButtonGet" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1542157615]
+[node name="ButtonGet" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1426943850 instance=ExtResource("3_em4ww")]
 unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = ExtResource("2_em4ww")
-toggle_mode = true
-text = "Get Member"
-script = ExtResource("3_ypjg7")
-task = ExtResource("4_5poxo")
 
 [node name="ButonSacrifice" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=279778992]
 unique_name_in_owner = true

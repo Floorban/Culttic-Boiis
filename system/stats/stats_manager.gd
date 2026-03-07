@@ -31,6 +31,7 @@ func update_multiplier(stat: Stat, amount : float) -> void:
 	# update multiplier ui here
 	# probably some stuff showing up when hovering the aciton buttons (e.g. how many ppl getting from next cult action )
 
+
 func add_stat(stat: Stat, amount: int) -> void:
 	#stats[stat] += amount
 	# int or float here? check again later

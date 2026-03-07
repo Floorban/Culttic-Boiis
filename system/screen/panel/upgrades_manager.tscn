@@ -102,6 +102,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="UpgradeControlLabel" type="Label" parent="UpgradeInfo/MarginContainer" unique_id=1890431986]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5694292, 0.96778554, 0.5030143, 1)
 theme_override_fonts/font = ExtResource("4_w3hvi")
@@ -112,7 +113,7 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradeInfo/MarginContainer" unique_id=49700313]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 9
 
 [node name="UpgradeNameLabel" type="Label" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=1409339004]
 unique_name_in_owner = true
@@ -121,20 +122,23 @@ theme_override_fonts/font = ExtResource("4_w3hvi")
 theme_override_font_sizes/font_size = 38
 text = "Upgrade Name"
 
-[node name="UpgradeCostLabel" type="Label" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=87897429]
+[node name="UpgradeCostLabel" type="RichTextLabel" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=1849571215]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8666667, 0.85490197, 0.09411765, 1)
-theme_override_fonts/font = ExtResource("4_w3hvi")
-theme_override_font_sizes/font_size = 28
+theme_override_colors/default_color = Color(0.9367155, 0.93363106, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_w3hvi")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
 text = "Upgrade Cost"
+fit_content = true
 
 [node name="UpgradeEffectLabel" type="Label" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=1362085208]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 78)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.5686275, 0.96862745, 0.5019608, 1)
 theme_override_fonts/font = ExtResource("4_w3hvi")
 theme_override_font_sizes/font_size = 28
-text = "Upgrade Effect sddsad dsad sadsadasdasdasdsadasdsadasdasdasdasdasdasdsaadsadasddsadasdasdasdasdasda"
+text = "Upgrade Effect"
 autowrap_mode = 3
 clip_text = true

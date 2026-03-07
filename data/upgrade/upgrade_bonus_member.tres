@@ -14,6 +14,12 @@ stat = ExtResource("2_tfgn0")
 amount = 20
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
+[sub_resource type="Resource" id="Resource_tfgn0"]
+script = ExtResource("1_b3s61")
+stat = ExtResource("5_slbjl")
+amount = 20
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
 [sub_resource type="Resource" id="Resource_emmih"]
 script = ExtResource("1_b3s61")
 stat = ExtResource("5_slbjl")
@@ -30,9 +36,9 @@ region = Rect2(0, 32, 16, 16)
 
 [resource]
 script = ExtResource("6_ua2fi")
-upgrade_name = "upgrade I"
+upgrade_name = "Upgrade I"
 upgrade_description = "this upgrade can make you cum in 2s  this upgrade can make you cum in 2s"
 upgrade_icon = SubResource("AtlasTexture_4ylsh")
-costs = Array[ExtResource("1_b3s61")]([SubResource("Resource_k0qrf")])
+costs = Array[ExtResource("1_b3s61")]([SubResource("Resource_k0qrf"), SubResource("Resource_tfgn0")])
 effects = Array[ExtResource("3_4ylsh")]([SubResource("Resource_a7l6t")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"
