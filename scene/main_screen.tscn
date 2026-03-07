@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/world_panel.tscn" id="4_bor6b"]
 [ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
-[ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="7_6rrgu"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
@@ -46,7 +45,6 @@ offset_bottom = 820.0
 
 [node name="DashboardPanel" parent="MarginContainer/Background/PanelContainer" unique_id=952982154 instance=ExtResource("2_jmo0d")]
 layout_mode = 0
-script = ExtResource("7_6rrgu")
 
 [node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
 layout_mode = 0

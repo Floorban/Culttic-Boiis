@@ -25,6 +25,7 @@ grow_vertical = 2
 script = ExtResource("1_lmd8u")
 task_btns = [NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
 task_slots = [NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot1"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot2"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot3"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot4"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot5"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot6"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot7"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot8"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot9")]
+max_parallel_tasks = 5
 
 [node name="Background" type="PanelContainer" parent="." unique_id=18296509]
 custom_minimum_size = Vector2(600, 310)
