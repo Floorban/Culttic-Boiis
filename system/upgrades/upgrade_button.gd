@@ -1,7 +1,7 @@
 extends TextureButton
 class_name UpgradeButton
 
-@onready var upgrade_level: Label = $UpgradeLevel
+@onready var upgrade_level: Label = $UpgradeLevel 
 @onready var upgrade_branch: Line2D = $UpgradeBranch
 
 @export var upgrade: UpgradeData
@@ -16,6 +16,8 @@ func _ready() -> void:
 		hide()
 	_init_line()
 	pressed.connect(_on_pressed)
+	if upgrade:
+		texture_normal = upgrade.upgrade_icon
 
 
 func _init_line() -> void:

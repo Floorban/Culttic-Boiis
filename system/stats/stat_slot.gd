@@ -13,7 +13,7 @@ func _ready() -> void:
 		stat_icon.texture = stat.stat_icon
 	if stats_manager:
 		stats_manager.stat_changed.connect(_on_stat_changed)
-	update_ui()
+		stats_manager.stat_cost_failed.connect(_pay_with_stat_failed)
 
 
 func _on_stat_changed(changed_stat: Stat, value: int) -> void:
@@ -21,5 +21,17 @@ func _on_stat_changed(changed_stat: Stat, value: int) -> void:
 		stat_num_label.text = str(value)
 
 
-func update_ui():
-	stat_num_label.text = str(stats_manager.get_stat(stat))
+var fail_tween : Tween
+
+func _pay_with_stat_failed(changed_stat: Stat) -> void:
+	if changed_stat != stat:
+		return
+	var og_color = Color.WHITE
+	stat_num_label.modulate = og_color
+	
+	if fail_tween:
+		fail_tween.kill()
+	fail_tween = create_tween()
+	fail_tween.tween_property(stat_num_label, "modulate", Color(0.796, 0.0, 0.0, 1.0), 0.1)
+	fail_tween.tween_property(stat_num_label, "modulate", og_color, 0.15)
+	fail_tween.tween_callback(func(): stat_num_label.modulate = og_color)

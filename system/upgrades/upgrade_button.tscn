@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://beeci88ete627"]
 
-[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="1_gbnho"]
 [ext_resource type="Script" uid="uid://dcvyj2pcnodv8" path="res://system/upgrades/upgrade_button.gd" id="2_itpuo"]
 
 [node name="UpgradeButton" type="TextureButton" unique_id=1774295761]
 self_modulate = Color(0.36078432, 0.36078432, 0.36078432, 1)
 custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
 disabled = true
-texture_normal = ExtResource("1_gbnho")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("2_itpuo")

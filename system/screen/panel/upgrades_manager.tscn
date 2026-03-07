@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://kseiabufssdw"]
 
 [ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_217a5"]
-[ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/screen/panel/upgrades_panel.gd" id="1_fmctd"]
+[ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/screen/panel/upgrades_manager.gd" id="1_fmctd"]
 [ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/upgrade_bonus_member.tres" id="3_xuksn"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="4_w3hvi"]
 
-[node name="UpgradesPanel" type="Control" unique_id=952982154 node_paths=PackedStringArray("upgrade_btns")]
+[node name="UpgradesManager" type="Control" unique_id=952982154 node_paths=PackedStringArray("upgrade_btns")]
 custom_minimum_size = Vector2(1300, 820)
 layout_mode = 3
 anchors_preset = 0
@@ -24,6 +25,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
+
+[node name="UpgradeInfoSlot" type="PanelContainer" parent="." unique_id=211787367]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 170)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 125.0
+offset_right = 621.0
+offset_bottom = 295.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UpgradeInfoSlot" unique_id=1321732453]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeInfoSlot/MarginContainer" unique_id=49700313]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1409339004]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_w3hvi")
+theme_override_font_sizes/font_size = 34
+text = "Upgrade Name"
+
+[node name="Label2" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=87897429]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_w3hvi")
+theme_override_font_sizes/font_size = 26
+text = "Upgrade Cost"
+
+[node name="Label3" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1362085208]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_w3hvi")
+theme_override_font_sizes/font_size = 26
+text = "Upgrade Effect sddsad dsad sadsadasdasdasdsadasdsadasdasdasdasdasdasdsaadsadasd"
+autowrap_mode = 3
+clip_text = true
 
 [node name="SkillButton" parent="." unique_id=1521863950 instance=ExtResource("1_217a5")]
 layout_mode = 0

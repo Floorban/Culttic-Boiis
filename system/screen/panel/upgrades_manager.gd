@@ -7,6 +7,8 @@ signal upgrade_changed(upgrade: UpgradeData, level: int)
 var upgrades: Array[UpgradeData]
 var upgrade_levels: Dictionary[UpgradeData, int] = {}
 
+@onready var upgrade_info_slot: PanelContainer = %UpgradeInfoSlot
+
 
 func _ready() -> void:
 	GameManager.upgrades_manager = self
@@ -14,6 +16,11 @@ func _ready() -> void:
 		upgrades.append(upgrade_btn.upgrade)
 	for upgrade in upgrades:
 		upgrade_levels[upgrade] = 0
+
+
+func _process(delta: float) -> void:
+	if visible:
+		upgrade_info_slot.global_position = get_global_mouse_position()
 
 
 func toggle_upgrade_panel(open: bool) -> void:

@@ -2,6 +2,7 @@ class_name StatsManager
 extends Control
 
 signal stat_changed(stat: Stat, value: int)
+signal stat_cost_failed(stat: Stat)
 
 var stats : Dictionary = {}
 @export var starting_stats : Array[StatChange]
@@ -63,3 +64,7 @@ func can_pay(costs: Array[StatChange]) -> bool:
 func pay_costs(costs : Array[StatChange]) -> void:
 	for c in costs:
 		spend_stat(c.stat, c.amount)
+
+
+func pay_failed(stat: Stat) -> void:
+	stat_cost_failed.emit(stat)

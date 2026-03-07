@@ -19,6 +19,9 @@ func start_task(task : Task, btn: TaskButton) -> bool:
 	if not GameManager.stats_manager.can_pay(task.costs):
 		print("Not enough resources")
 		btn.button_press_failed()
+		for c in task.costs:
+			GameManager.stats_manager.pay_failed(c.stat)
+		# give a effect to the required stats cost
 		return false
 		
 	GameManager.stats_manager.pay_costs(task.costs)
